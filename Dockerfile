@@ -1,3 +1,5 @@
-FROM tomcat:8.0.20-jre8
-# Dummy text to test 
-COPY target/java-web-app*.war /usr/local/tomcat/webapps/java-web-app.war
+FROM centos:7
+WORKDIR /usr/app
+RUN  yum install httpd -y
+COPY ./  /usr/app/var/www/html
+EXPOSE 8085
